@@ -1,0 +1,10 @@
+F:\资料文件\学习\MvcAndEFDemo\Model\bin\Debug\Model.dll.config
+F:\资料文件\学习\MvcAndEFDemo\Model\bin\Debug\Model.dll
+F:\资料文件\学习\MvcAndEFDemo\Model\bin\Debug\Model.pdb
+F:\资料文件\学习\MvcAndEFDemo\Model\bin\Debug\EntityFramework.dll
+F:\资料文件\学习\MvcAndEFDemo\Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\资料文件\学习\MvcAndEFDemo\Model\bin\Debug\EntityFramework.xml
+F:\资料文件\学习\MvcAndEFDemo\Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\资料文件\学习\MvcAndEFDemo\Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\资料文件\学习\MvcAndEFDemo\Model\obj\Debug\Model.dll
+F:\资料文件\学习\MvcAndEFDemo\Model\obj\Debug\Model.pdb

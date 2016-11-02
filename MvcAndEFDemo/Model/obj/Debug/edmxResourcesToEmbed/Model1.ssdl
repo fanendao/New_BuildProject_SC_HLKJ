@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="T_RK_RKD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SJBMC" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="XMID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RKDH" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DJRQ" Type="datetime" />
+    <Property Name="ZJLB_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZJLB" Type="nvarchar" MaxLength="50" />
+    <Property Name="DBDW_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="DBDWMC" Type="nvarchar" MaxLength="50" />
+    <Property Name="HT_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="HTBH" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supplier_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Lldw_ID" Type="varchar" MaxLength="50" />
+    <Property Name="LldwName" Type="varchar" MaxLength="150" />
+    <Property Name="ZT" Type="nvarchar" MaxLength="50" />
+    <Property Name="BZ" Type="nvarchar" MaxLength="400" />
+    <Property Name="LRR" Type="nvarchar" MaxLength="50" />
+    <Property Name="LRRQ" Type="datetime" />
+    <Property Name="SHR" Type="nvarchar" MaxLength="50" />
+    <Property Name="SHRQ" Type="datetime" />
+    <Property Name="SHBZ" Type="nvarchar" MaxLength="400" />
+    <Property Name="SFZJZC" Type="nvarchar" MaxLength="10" />
+    <Property Name="SFCZ" Type="varchar" MaxLength="50" />
+    <Property Name="GLRKDId" Type="varchar" MaxLength="50" />
+    <Property Name="SFCZRKD" Type="varchar" MaxLength="50" />
+    <Property Name="GLYRKDId" Type="varchar" MaxLength="50" />
+    <Property Name="JH_ID" Type="varchar" MaxLength="50" />
+    <Property Name="JHDH" Type="varchar" MaxLength="100" />
+    <Property Name="pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FJ" Type="varchar" MaxLength="100" />
+    <Property Name="f_DJLXZT" Type="int" />
+    <Property Name="SDRKDH" Type="varchar" MaxLength="50" />
+    <Property Name="Add1" Type="varchar" MaxLength="1000" />
+    <Property Name="Add2" Type="varchar" MaxLength="1000" />
+    <Property Name="Add3" Type="varchar" MaxLength="1000" />
+    <Property Name="Add4" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="T_RK_RKDCB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SJBMC" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ZBID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CLID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CLBH" Type="nvarchar" MaxLength="50" />
+    <Property Name="CLMC" Type="nvarchar" MaxLength="200" />
+    <Property Name="GGXH" Type="nvarchar" MaxLength="100" />
+    <Property Name="DW" Type="nvarchar" MaxLength="50" />
+    <Property Name="SL" Type="numeric" Precision="30" Scale="4" />
+    <Property Name="DJ" Type="numeric" Precision="30" Scale="4" />
+    <Property Name="HJ" Type="numeric" Precision="30" Scale="4" />
+    <Property Name="YFJE" Type="numeric" Precision="30" Scale="4" />
+    <Property Name="SCPH" Type="nvarchar" MaxLength="50" />
+    <Property Name="SCPHBZ" Type="nvarchar" MaxLength="400" />
+    <Property Name="BZ" Type="nvarchar" MaxLength="2000" />
+    <Property Name="HTSL" Type="numeric" Precision="30" Scale="4" />
+    <Property Name="HTDJ" Type="numeric" Precision="30" Scale="4" />
+    <Property Name="SFHTKZCL" Type="varchar" MaxLength="50" />
+    <Property Name="SFJHKZCL" Type="varchar" MaxLength="50" />
+    <Property Name="JHDJ" Type="numeric" Precision="30" Scale="4" />
+    <Property Name="pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SFYDJHCL" Type="varchar" MaxLength="50" />
+    <Property Name="YDJHBH" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_T_RK_RKDCB_T_RK_RKD">
+    <End Role="T_RK_RKD" Type="Self.T_RK_RKD" Multiplicity="1" />
+    <End Role="T_RK_RKDCB" Type="Self.T_RK_RKDCB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_RK_RKD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_RK_RKDCB">
+        <PropertyRef Name="ZBID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="T_RK_RKD" EntityType="Self.T_RK_RKD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_RK_RKDCB" EntityType="Self.T_RK_RKDCB" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_T_RK_RKDCB_T_RK_RKD" Association="Self.FK_T_RK_RKDCB_T_RK_RKD">
+      <End Role="T_RK_RKD" EntitySet="T_RK_RKD" />
+      <End Role="T_RK_RKDCB" EntitySet="T_RK_RKDCB" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

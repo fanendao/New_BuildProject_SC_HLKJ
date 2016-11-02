@@ -1,0 +1,1 @@
+﻿{"status":200,"msg":"success","data":{"items":[{"mod":"inventory","total1":"","total2":""},{"mod":"fund","total1":"","total2":""},{"mod":"contact","total1":"","total2":""},{"mod":"sales","total1":"","total2":""},{"mod":"purchase","total1":"","total2":0},{"mod":"order","total1":0,"total2":0,"total3":0}],"totalsize":6}}

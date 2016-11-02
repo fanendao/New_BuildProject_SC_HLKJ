@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="../css/common.css" rel="stylesheet" />
+    <link href="../css/default/ui.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.8.2.min.js"></script>
+    <script src="../Scripts/grid.js"></script>
+    <script src="../Scripts/grid.locale-cn.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            pageInit();
+        });
+        function pageInit() {
+            jQuery("#list3").jqGrid(
+                {
+                    url: '/Ajax/test1.ashx',
+                    datatype: "json",
+                    colNames: ['Inv No', 'Date', 'Client', 'Amount', 'Tax', 'Total', 'Notes'],
+                    colModel: [
+                                 { name: 'id', index: 'id', width: 60, sorttype: "int" },
+                                 { name: 'invdate', index: 'invdate', width: 90, sorttype: "date" },
+                                 { name: 'name', index: 'name', width: 100 },
+                                 { name: 'amount', index: 'amount', width: 80, align: "right", sorttype: "float" },
+                                 { name: 'tax', index: 'tax', width: 80, align: "right", sorttype: "float" },
+                                 { name: 'total', index: 'total', width: 80, align: "right", sorttype: "float" },
+                                 { name: 'note', index: 'note', width: 150, sortable: false }
+                    ],
+                    rowNum: 20,
+                    rowList: [10, 20, 100],
+                    pager: '#pager3',
+                    sortname: 'invdate',
+                    viewrecords: true,
+                    sortorder: "desc",
+                    loadonce: true,
+                    caption: "Load Once Example"
+                });
+        }
+
+        $(function () {
+            /**从选择行中获取数据**/
+            $("#a1").click(function () {
+                var id = $("#list3").jqGrid('getGridParam', 'selrow');
+                if (id) {
+                    var ret = jQuery("#list3").jqGrid('getRowData', id);
+                    console.info(ret);
+                    console.info("获取到的数据有："+ret.invdate);
+                } else {
+                    alert('请选择行数据！');
+                }
+            });
+
+
+            /**删除选中行**/ 
+            $("#a2").click(function () {
+                var id = $("#list3").jqGrid('getGridParam', 'selrow');
+                if (id) {
+                    if (confirm('确定删除行'+id)) {
+                        var ret = jQuery("#list3").jqGrid('delRowData', id);
+                        alert('删除成功！');
+                    }
+                } else {
+                    alert('请选择要删除的行！');
+                }
+            });
+
+
+            /**更新选中行amounts**/
+            $("#a3").click(function () {
+                var id = $("#list3").jqGrid('getGridParam', 'selrow');
+                if (id) { 
+                        var ret = jQuery("#list3").jqGrid('setRowData', id, {
+                            amount: "3333333.00",
+                            tax: "333.00",
+                            total: "366.00",
+                            note: "<img src='/css/img/select_skin.png'/>"
+                        });
+                        alert(ret);
+                } else {
+                    alert('请选择行！');
+                }
+            });
+
+
+            /**新增一行99**/
+            $("#a4").click(function () {
+
+                var datarow = {
+                    id: "99",
+                    invdate: "2007-09-01",
+                    name: "test3",
+                    note: "note3",
+                    amount: "400.00",
+                    tax: "30.00",
+                    total: "430.00"
+                };
+
+
+                var id = $("#list3").jqGrid('addRowData', 99,datarow);
+                 
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+     <table id="list3"></table> 
+    <div id="pager3"></div>
+
+     <br />
+    <a href="#" id="a1">从选择行中获取数据</a>
+    <br />
+    <a href="#" id="a2">删除选中行</a>
+    <br />
+    <a href="#" id="a3">更新选中行amounts</a>
+    <br />
+    <a href="#" id="a4">新增一行99</a>
+</body>
+</html>

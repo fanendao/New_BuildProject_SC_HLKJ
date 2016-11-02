@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="renderer" content="webkit|ie-stand|ie-comp">
+<title>在线进销存</title>
+
+<link href="/css/common.css?ver=20160222" rel="stylesheet" type="text/css">
+<link href="/css/green/ui.min.css?ver=20160222" rel="stylesheet">
+<script src="/js/common/libs/jquery/jquery-1.10.2.min.js"></script>
+<script src="/js/common/libs/json3.min.js"></script>
+<script src="/js/common/common.js?ver=20160222"></script>
+<script src="/js/common/grid.js?ver=20160222"></script>
+<script src="/js/common/plugins.js?ver=20160222"></script>
+<script src="/js/common/plugins/jquery.dialog.js?self=true&ver=20160222"></script>
+
+<script type="text/javascript">
+    var DOMAIN = document.domain;
+    var WDURL = "";
+    var SCHEME = "green";
+    try {
+        document.domain = 'youshang.com';
+    } catch (e) {
+    }
+    //ctrl+F5 增加版本号来清空iframe的缓存的
+    $(document).keydown(function (event) {
+        /* Act on the event */
+        if (event.keyCode === 116 && event.ctrlKey) {
+            var defaultPage = Public.getDefaultPage();
+            var href = defaultPage.location.href.split('?')[0] + '?';
+            var params = Public.urlParam();
+            params['version'] = Date.parse((new Date()));
+            for (i in params) {
+                if (i && typeof i != 'function') {
+                    href += i + '=' + params[i] + '&';
+                }
+            }
+            defaultPage.location.href = href;
+            event.preventDefault();
+        }
+    });
+</script>
+
+<style>
+#matchCon { width: 200px; }
+.grid-wrap{position:relative;}
+.ztreeDefault{position: absolute;right: 0;top: 0;background-color: #fff;border: 1px solid #D6D5D5;width: 140px;height: 406px;overflow-y: auto;}
+</style>
+</head>
+
+<body class="bgwh">
+<div class="container fix p20">
+	  <div class="mod-search m0 cf">
+	    <div class="fl">
+	      <ul class="ul-inline">
+	        <li>
+	          <input type="text" id="matchCon" class="ui-input ui-input-ph" value="请输入商品编号或名称或型号">
+	        </li>
+	        <li><a class="ui-btn mrb" id="search">查询</a><!-- <a class="ui-btn" id="refresh">刷新</a> --></li>
+	      </ul>
+	    </div>
+	  </div>
+	  <div class="grid-wrap">
+	    <table id="grid">
+	    </table>
+	    <div id="page"></div>
+	  </div>
+</div>
+<script src="/js/dist/goodsBatch.js?ver=20160222"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+﻿{"status":200,"msg":"success","data":{"page":1,"total":1,"records":500,"rows":[{"pinYin":"wdkh","id":999999,"cLevel":0,"name":"网店客户","delete":0,"number":"999999"},{"pinYin":"hbs","id":1294696919855,"cLevel":0,"name":"hbs","delete":0,"number":"KH201602240001"}]}}

@@ -1,0 +1,11 @@
+E:\项目\湖北襄管物流金融监管系统第二版\SqlDataAccess\bin\Debug\SqlDataAccess.dll
+E:\项目\湖北襄管物流金融监管系统第二版\SqlDataAccess\bin\Debug\SqlDataAccess.pdb
+E:\项目\湖北襄管物流金融监管系统第二版\SqlDataAccess\bin\Debug\BSIT.Logistics.CommonComponent.dll
+E:\项目\湖北襄管物流金融监管系统第二版\SqlDataAccess\bin\Debug\BusinessCommon.dll
+E:\项目\湖北襄管物流金融监管系统第二版\SqlDataAccess\bin\Debug\CryptographyCLass.dll
+E:\项目\湖北襄管物流金融监管系统第二版\SqlDataAccess\bin\Debug\DotNetBarcode.dll
+E:\项目\湖北襄管物流金融监管系统第二版\SqlDataAccess\bin\Debug\System.Data.SQLite.dll
+E:\项目\湖北襄管物流金融监管系统第二版\SqlDataAccess\bin\Debug\DataSafeClass.dll
+E:\项目\湖北襄管物流金融监管系统第二版\SqlDataAccess\obj\Debug\ResolveAssemblyReference.cache
+E:\项目\湖北襄管物流金融监管系统第二版\SqlDataAccess\obj\Debug\SqlDataAccess.dll
+E:\项目\湖北襄管物流金融监管系统第二版\SqlDataAccess\obj\Debug\SqlDataAccess.pdb

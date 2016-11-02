@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T_RK_RKD" EntityType="Model1.T_RK_RKD" />
+    <EntitySet Name="T_RK_RKDCB" EntityType="Model1.T_RK_RKDCB" />
+    <AssociationSet Name="FK_T_RK_RKDCB_T_RK_RKD" Association="Model1.FK_T_RK_RKDCB_T_RK_RKD">
+      <End Role="T_RK_RKD" EntitySet="T_RK_RKD" />
+      <End Role="T_RK_RKDCB" EntitySet="T_RK_RKDCB" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="T_RK_RKD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SJBMC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="XMID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RKDH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DJRQ" Type="DateTime" Precision="3" />
+    <Property Name="ZJLB_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZJLB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DBDW_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DBDWMC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HT_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HTBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Supplier_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Lldw_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LldwName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ZT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BZ" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="LRR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LRRQ" Type="DateTime" Precision="3" />
+    <Property Name="SHR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SHRQ" Type="DateTime" Precision="3" />
+    <Property Name="SHBZ" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="SFZJZC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SFCZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GLRKDId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SFCZRKD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GLYRKDId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JH_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JHDH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FJ" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="f_DJLXZT" Type="Int32" />
+    <Property Name="SDRKDH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Add1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Add2" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Add3" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Add4" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_RK_RKDCB" Relationship="Model1.FK_T_RK_RKDCB_T_RK_RKD" FromRole="T_RK_RKD" ToRole="T_RK_RKDCB" />
+  </EntityType>
+  <EntityType Name="T_RK_RKDCB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SJBMC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZBID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CLID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CLBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CLMC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="GGXH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DW" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SL" Type="Decimal" Precision="30" Scale="4" />
+    <Property Name="DJ" Type="Decimal" Precision="30" Scale="4" />
+    <Property Name="HJ" Type="Decimal" Precision="30" Scale="4" />
+    <Property Name="YFJE" Type="Decimal" Precision="30" Scale="4" />
+    <Property Name="SCPH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SCPHBZ" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="BZ" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="HTSL" Type="Decimal" Precision="30" Scale="4" />
+    <Property Name="HTDJ" Type="Decimal" Precision="30" Scale="4" />
+    <Property Name="SFHTKZCL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SFJHKZCL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JHDJ" Type="Decimal" Precision="30" Scale="4" />
+    <Property Name="pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SFYDJHCL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YDJHBH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_RK_RKD" Relationship="Model1.FK_T_RK_RKDCB_T_RK_RKD" FromRole="T_RK_RKDCB" ToRole="T_RK_RKD" />
+  </EntityType>
+  <Association Name="FK_T_RK_RKDCB_T_RK_RKD">
+    <End Type="Model1.T_RK_RKD" Role="T_RK_RKD" Multiplicity="1" />
+    <End Type="Model1.T_RK_RKDCB" Role="T_RK_RKDCB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_RK_RKD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_RK_RKDCB">
+        <PropertyRef Name="ZBID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,14 @@
+F:\资料文件\学习\MvcAndEFDemo\IBll\bin\Debug\IBll.dll
+F:\资料文件\学习\MvcAndEFDemo\IBll\bin\Debug\IBll.pdb
+F:\资料文件\学习\MvcAndEFDemo\IBll\bin\Debug\Dao.dll
+F:\资料文件\学习\MvcAndEFDemo\IBll\bin\Debug\IDao.dll
+F:\资料文件\学习\MvcAndEFDemo\IBll\bin\Debug\Model.dll
+F:\资料文件\学习\MvcAndEFDemo\IBll\bin\Debug\EntityFramework.dll
+F:\资料文件\学习\MvcAndEFDemo\IBll\bin\Debug\Dao.pdb
+F:\资料文件\学习\MvcAndEFDemo\IBll\bin\Debug\IDao.pdb
+F:\资料文件\学习\MvcAndEFDemo\IBll\bin\Debug\Model.pdb
+F:\资料文件\学习\MvcAndEFDemo\IBll\bin\Debug\EntityFramework.xml
+F:\资料文件\学习\MvcAndEFDemo\IBll\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\资料文件\学习\MvcAndEFDemo\IBll\obj\Debug\IBll.csprojResolveAssemblyReference.cache
+F:\资料文件\学习\MvcAndEFDemo\IBll\obj\Debug\IBll.dll
+F:\资料文件\学习\MvcAndEFDemo\IBll\obj\Debug\IBll.pdb

@@ -1,0 +1,1 @@
+﻿{"status":200,"msg":"success","data":{"page":1,"total":1,"records":1,"rows":[{"address":"","allowNeg":false,"delete":false,"deptId":0,"empId":0,"groupx":"","id":1294895924989,"locationNo":"232","name":"232","phone":"","type":0}]}}

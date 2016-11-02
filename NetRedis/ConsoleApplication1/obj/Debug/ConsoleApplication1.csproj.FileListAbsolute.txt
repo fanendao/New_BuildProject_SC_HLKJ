@@ -1,0 +1,13 @@
+F:\资料文件\学习\NetRedis\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+F:\资料文件\学习\NetRedis\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+F:\资料文件\学习\NetRedis\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+F:\资料文件\学习\NetRedis\ConsoleApplication1\bin\Debug\ServiceStack.Client.dll
+F:\资料文件\学习\NetRedis\ConsoleApplication1\bin\Debug\ServiceStack.Common.dll
+F:\资料文件\学习\NetRedis\ConsoleApplication1\bin\Debug\ServiceStack.dll
+F:\资料文件\学习\NetRedis\ConsoleApplication1\bin\Debug\ServiceStack.Interfaces.dll
+F:\资料文件\学习\NetRedis\ConsoleApplication1\bin\Debug\ServiceStack.Redis.dll
+F:\资料文件\学习\NetRedis\ConsoleApplication1\bin\Debug\ServiceStack.Server.dll
+F:\资料文件\学习\NetRedis\ConsoleApplication1\bin\Debug\ServiceStack.Text.dll
+F:\资料文件\学习\NetRedis\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+F:\资料文件\学习\NetRedis\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+F:\资料文件\学习\NetRedis\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

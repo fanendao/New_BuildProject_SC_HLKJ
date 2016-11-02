@@ -1,0 +1,550 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script>
+        var $grid = $("#grid");
+        var addList = {};
+        var urlParam = Public.urlParam(),
+        zTree;
+        var defaultPage = Public.getDefaultPage();
+        var SYSTEM = defaultPage.SYSTEM,
+        taxRequiredCheck = SYSTEM.taxRequiredCheck;
+        taxRequiredInput = SYSTEM.taxRequiredInput;
+        var api = frameElement.api;
+        var data = api.data || {};
+        var isSingle = data.isSingle || 0;
+        var skuMult = data.skuMult;
+        var queryConditions = {
+            skey: (frameElement.api.data ? frameElement.api.data.skey : "") || "",
+            isDelete: data.isDelete || 0
+        };
+        var THISPAGE = {
+            init: function (a) {
+                this.initDom();
+                this.loadGrid();
+                this.initZtree();
+                this.addEvent();
+            },
+            initDom: function () {
+                var a = this;
+                this.$_matchCon = $("#matchCon").val(queryConditions.skey || "请输入商品编号或名称或型号");
+                this.$_matchCon.placeholder();
+            },
+            initZtree: function () {
+                zTree = Public.zTree.init($(".grid-wrap"), {
+                    defaultClass: "ztreeDefault",
+                    showRoot: true
+                },
+                {
+                    callback: {
+                        beforeClick: function (b, a) {
+                            queryConditions.assistId = a.id;
+                            $("#search").trigger("click");
+                        }
+                    }
+                });
+            },
+            loadGrid: function () {
+                var a = $(window).height() - $(".grid-wrap").offset().top - 84;
+                $("#grid").jqGrid({
+                    url: "/basedata/inventory.do?action=list",
+                    postData: queryConditions,
+                    datatype: "json",
+                    width: 578,
+                    height: 354,
+                    altRows: true,
+                    gridview: true,
+                    colModel: [{
+                        name: "id",
+                        label: "ID",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "operating",
+                        label: "操作",
+                        width: 60,
+                        fixed: true,
+                        formatter: b,
+                        align: "center"
+                    },
+                    {
+                        name: "number",
+                        label: "商品编号",
+                        width: 100,
+                        title: false
+                    },
+                    {
+                        name: "name",
+                        label: "商品名称",
+                        width: 200,
+                        classes: "ui-ellipsis"
+                    },
+                    {
+                        name: "barCode",
+                        label: "商品编码",
+                        width: 200,
+                        hidden: true
+                    },
+                    {
+                        name: "skuClassId",
+                        label: "skuClassId",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "skuId",
+                        label: "skuId",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "skuName",
+                        label: "属性",
+                        width: 100,
+                        hidden: !skuMult,
+                        classes: "ui-ellipsis"
+                    },
+                    {
+                        name: "qty",
+                        label: "数量",
+                        width: 60,
+                        hidden: !skuMult,
+                        formatter: function (c) {
+                            return c || "&#160;";
+                        }
+                    },
+                    {
+                        name: "spec",
+                        label: "规格型号",
+                        width: 106,
+                        title: false
+                    },
+                    {
+                        name: "unitName",
+                        label: "单位",
+                        width: 60,
+                        title: false
+                    },
+                    {
+                        name: "unitId",
+                        label: "单位ID",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "salePrice",
+                        label: "零售价",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "retailPrice",
+                        label: "批发价",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "salePrice1",
+                        label: "vip价",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "salePrice2",
+                        label: "折扣率一",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "salePrice3",
+                        label: "折扣率二",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "purPrice",
+                        label: "采购单价",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "locationId",
+                        label: "仓库ID",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "locationName",
+                        label: "仓库名称",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "isSerNum",
+                        label: "是否启用序列号",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "invSkus",
+                        label: "商品属性集合",
+                        width: 0,
+                        hidden: true,
+                        formatter: function (e, c, d) {
+                            if (e && typeof e === "object") {
+                                return JSON.stringify(e);
+                            }
+                            return e || "&#160;";
+                        }
+                    },
+                    {
+                        name: "isWarranty",
+                        label: "是否批次保质期管理",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "safeDays",
+                        label: "保质期(天)",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "remark",
+                        label: "备注",
+                        width: 100,
+                        classes: "ui-ellipsis"
+                    },
+                    {
+                        name: "purUnitId",
+                        label: "首选入库",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "purUnitName",
+                        label: "首选入库",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "saleUnitId",
+                        label: "首选出库",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "saleUnitName",
+                        label: "首选出库",
+                        width: 0,
+                        hidden: true
+                    },
+                    {
+                        name: "prices",
+                        label: "价格数组",
+                        width: 0,
+                        hidden: true,
+                        formatter: function (e, c, d) {
+                            if (e && typeof e === "object") {
+                                return JSON.stringify(e);
+                            }
+                            return e || "&#160;";
+                        }
+                    }],
+                    cmTemplate: {
+                        sortable: false
+                    },
+                    multiselect: isSingle ? false : true,
+                    page: 1,
+                    sortname: "number",
+                    sortorder: "asc",
+                    pager: "#page",
+                    page: 1,
+                    rowNum: 100,
+                    rowList: [100, 200, 500],
+                    viewrecords: true,
+                    shrinkToFit: true,
+                    forceFit: false,
+                    jsonReader: {
+                        root: "data.rows",
+                        records: "data.records",
+                        total: "data.total",
+                        repeatitems: false,
+                        id: "id"
+                    },
+                    loadError: function (e, c, d) { },
+                    ondblClickRow: function (d, g, c, f) {
+                        if (isSingle) {
+                            callback();
+                            frameElement.api.close();
+                        }
+                    },
+                    onSelectRow: function (d, c) {
+                        if (c) {
+                            var e = $grid.jqGrid("getRowData", d);
+                            if (typeof e.invSkus === "string") {
+                                e.invSkus = $.parseJSON(e.invSkus);
+                            }
+                            if (typeof e.prices === "string") {
+                                e.prices = $.parseJSON(e.prices);
+                            }
+                            addList[d] = e;
+                        } else {
+                            if (addList[d]) {
+                                delete addList[d];
+                            }
+                        }
+                    },
+                    onSelectAll: function (e, d) {
+                        for (var f = 0,
+                        c = e.length; f < c; f++) {
+                            var g = e[f];
+                            if (d) {
+                                var h = $grid.jqGrid("getRowData", g);
+                                if (typeof h.invSkus === "string") {
+                                    h.invSkus = $.parseJSON(h.invSkus);
+                                }
+                                if (typeof h.prices === "string") {
+                                    h.prices = $.parseJSON(h.prices);
+                                }
+                                addList[g] = h;
+                            } else {
+                                if (addList[g]) {
+                                    delete addList[g];
+                                }
+                            }
+                        }
+                    },
+                    gridComplete: function () {
+                        if (isSingle) {
+                            return;
+                        }
+                        for (_item in addList) {
+                            var c = $("#" + addList[_item].id);
+                            if (!c.length && c.find("input:checkbox")[0].checked) {
+                                $grid.jqGrid("setSelection", _item, false);
+                            }
+                        }
+                    }
+                });
+                function b(f, c, e) {
+                    var d = '<div class="operating" data-id="' + e.id + '"><a class="ui-icon ui-icon-search" title="查询"></a><span class="ui-icon ui-icon-copy" title="商品图片"></span></div>';
+                    return d;
+                }
+            },
+            reloadData: function (a) {
+                addList = {};
+                $("#grid").jqGrid("setGridParam", {
+                    url: "/basedata/inventory.do?action=list",
+                    datatype: "json",
+                    postData: a
+                }).trigger("reloadGrid");
+            },
+            addEvent: function () {
+                var a = this;
+                $(".grid-wrap").on("click", ".ui-icon-search",
+                function (c) {
+                    c.preventDefault();
+                    var b = $(this).parent().data("id");
+                    Business.forSearch(b, "");
+                });
+                $(".grid-wrap").on("click", ".ui-icon-copy",
+                function (b) {
+                    b.preventDefault();
+                    var d = $(this).parent().data("id");
+                    var c = "商品图片";
+                    parent.$.dialog({
+                        content: "url:http://vip2.youshang.com/settings/fileUpload.jsp",
+                        data: {
+                            title: c,
+                            id: d,
+                            callback: function () { }
+                        },
+                        title: c,
+                        width: 775,
+                        height: 470,
+                        max: false,
+                        min: false,
+                        cache: false,
+                        lock: true
+                    });
+                });
+                $("#search").click(function () {
+                    queryConditions.catId = a.catId;
+                    queryConditions.skey = a.$_matchCon.val() === "请输入商品编号或名称或型号" ? "" : a.$_matchCon.val();
+                    a.reloadData(queryConditions);
+                });
+                $("#refresh").click(function () {
+                    a.reloadData(queryConditions);
+                });
+            }
+        };
+        THISPAGE.init();
+        function callbackSp(k) {
+            var j = parent.THISPAGE || api.data.page;
+            var c = j.curID;
+            var b = j.newId;
+            var g = "fix1";
+            var n = api.data.callback;
+            var a = $("#grid").jqGrid("getGridParam", "selarrrow"),
+            i = a.length;
+            var h = oldRow = parent.curRow,
+            l = parent.curCol;
+            if (i > 0) {
+                parent.$("#fixedGrid").jqGrid("restoreCell", h, l);
+                var f = Public.getDefaultPage();
+                var o = $("#grid").jqGrid("getRowData", a[0]);
+                o.id = o.id.split("_")[0];
+                if (typeof o.invSkus === "string") {
+                    o.invSkus = $.parseJSON(o.invSkus);
+                }
+                if (typeof o.prices === "string") {
+                    o.prices = $.parseJSON(o.prices);
+                }
+                if (o.spec === "") {
+                    var e = o.number + " " + o.name;
+                } else {
+                    var e = o.number + " " + o.name + "_" + o.spec;
+                }
+                o.isSerNum = o.isSerNum == 0 ? 0 : 1;
+                var d = $.extend(true, {},
+                o);
+                d.goods = e;
+                d.id = g;
+                if (c) {
+                    var m = parent.$("#fixedGrid").jqGrid("setRowData", c, {});
+                }
+                if (m) {
+                    parent.$("#" + c).data("goodsInfo", o).data("storageInfo", {
+                        id: o.locationId,
+                        name: o.locationName
+                    }).data("unitInfo", {
+                        unitId: o.unitId,
+                        name: o.unitName
+                    });
+                }
+                parent.$("#fixedGrid").jqGrid("setRowData", g, {
+                    goods: e
+                });
+            }
+            return a;
+        }
+        function callback(l) {
+            var k = parent.THISPAGE || api.data.page;
+            var d = k.curID;
+            var b = k.newId;
+            var o = api.data.callback;
+            var a = $("#grid").jqGrid("getGridParam", "selarrrow"),
+            i = a.length;
+            var h = oldRow = parent.curRow,
+            m = parent.curCol;
+            if (isSingle) {
+                parent.$("#grid").jqGrid("restoreCell", h, m);
+                var p = $("#grid").jqGrid("getRowData", $("#grid").jqGrid("getGridParam", "selrow"));
+                if (typeof p.invSkus === "string") {
+                    p.invSkus = $.parseJSON(p.invSkus);
+                }
+                if (typeof p.prices === "string") {
+                    p.prices = $.parseJSON(p.prices);
+                }
+                p.id = p.id.split("_")[0];
+                delete p.amount;
+                if (p.spec === "") {
+                    var f = p.number + " " + p.name;
+                } else {
+                    var f = p.number + " " + p.name + "_" + p.spec;
+                }
+                if (h > 8 && h > oldRow) {
+                    var g = h;
+                } else {
+                    var g = d;
+                }
+                var c = parent.$("#grid").jqGrid("getRowData", Number(d));
+                c = $.extend({},
+                c, {
+                    id: p.id,
+                    goods: f,
+                    invNumber: p.number,
+                    invName: p.name,
+                    unitName: p.unitName,
+                    qty: p.isSerNum == 1 ? 0 : 1,
+                    price: p.salePrice,
+                    spec: p.spec,
+                    skuId: p.skuId,
+                    skuName: p.skuName,
+                    isSerNum: p.isSerNum == 0 ? 0 : 1,
+                    safeDays: p.safeDays,
+                    invSkus: p.invSkus,
+                    name: p.name,
+                    prices: p.prices
+                });
+                o(g, c);
+            } else {
+                if (i > 0) {
+                    parent.$("#grid").jqGrid("restoreCell", h, m);
+                    for (rowid in addList) {
+                        var p = addList[rowid];
+                        p.id = p.id.split("_")[0];
+                        delete p.amount;
+                        defaultPage.SYSTEM.goodsInfo.push(p);
+                        p.invSkus = p.invSkus;
+                        p.prices = p.prices;
+                        if (p.spec === "") {
+                            var f = p.number + " " + p.name;
+                        } else {
+                            var f = p.number + " " + p.name + "_" + p.spec;
+                        }
+                        if (d) {
+                            var g = d;
+                        } else {
+                            var g = b;
+                        }
+                        var e = $.extend(true, {},
+                        p);
+                        e.goods = f;
+                        e.id = g;
+                        e.qty = p.isSerNum == 1 ? 0 : (e.qty || 1);
+                        if (d) {
+                            var n = parent.$("#grid").jqGrid("setRowData", Number(d), {});
+                        } else {
+                            var n = parent.$("#grid").jqGrid("addRowData", Number(b), {},
+                            "last");
+                            b++;
+                        }
+                        p.isSerNum = p.isSerNum == 0 ? 0 : 1;
+                        if (n) {
+                            parent.$("#" + g).data("goodsInfo", p).data("storageInfo", {
+                                id: p.locationId,
+                                name: p.locationName
+                            }).data("unitInfo", {
+                                unitId: p.unitId,
+                                name: p.unitName
+                            });
+                        }
+                        parent.$("#grid").jqGrid("setRowData", g, {
+                            goods: f
+                        });
+                        h++;
+                        var j = parent.$("#" + d).next();
+                        if (j.length > 0) {
+                            d = parent.$("#" + d).next().attr("id");
+                        } else {
+                            d = "";
+                        }
+                    }
+                    o(b, d, h);
+                    $("#grid").jqGrid("resetSelection");
+                    addList = {};
+                }
+            }
+            return a;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

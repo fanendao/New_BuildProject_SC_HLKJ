@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="../css/common.css" rel="stylesheet" />
+    <link href="../css/default/ui.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.8.2.min.js"></script>
+    <script src="../Scripts/grid.js?ver=123"></script>
+    <script src="../Scripts/grid.locale-cn.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            pageInit();
+        });
+        function pageInit() {
+            jQuery("#list11").jqGrid(
+                {
+                    url: '/Ajax/test2.ashx?type=0',
+                    datatype: "json",
+                    height: 600,
+                    colNames: ['Inv No', 'Date', 'Client', 'Amount', 'Tax', 'Total', 'Notes'],
+                    colModel: [
+                                 { name: 'id', index: 'id', width: 55 },
+                                 { name: 'invdate', index: 'invdate', width: 90 },
+                                 { name: 'name', index: 'name', width: 100 },
+                                 { name: 'amount', index: 'amount', width: 80, align: "right" },
+                                 { name: 'tax', index: 'tax', width: 80, align: "right" },
+                                 { name: 'total', index: 'total', width: 80, align: "right" },
+                                 { name: 'note', index: 'note', width: 150, sortable: false }
+                    ],
+                    rowNum: 10,
+                    rowList: [10, 20, 30],
+                    pager: '#pager11',
+                    sortname: 'id',
+                    viewrecords: true,
+                    sortorder: "desc",
+                    multiselect: false,
+                    subGrid: true,
+                    subGridUrl: '/Ajax/test2.ashx?type=2',
+                    subGridModel: [{
+                        name: ['No', 'Item', 'Qty', 'Unit', 'Line Total'],
+                        width: [55, 200, 80, 80, 80]
+                    }],
+                    caption: "Subgrid Example"
+                });
+            jQuery("#list11").jqGrid('navGrid', '#pager11', {
+                add: false,
+                edit: false,
+                del: false
+            });
+        }
+    </script>
+</head>
+<body>
+ <table id="list11"></table>
+    <div id="pager11"></div>
+</body>
+</html>

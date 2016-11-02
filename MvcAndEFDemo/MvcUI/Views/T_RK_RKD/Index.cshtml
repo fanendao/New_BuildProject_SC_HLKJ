@@ -1,0 +1,251 @@
+﻿@model IEnumerable<Model.T_RK_RKD>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SJBMC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.XMID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RKDH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DJRQ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZJLB_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZJLB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DBDW_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DBDWMC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HT_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HTBH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lldw_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LldwName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BZ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LRR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LRRQ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SHR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SHRQ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SHBZ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SFZJZC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SFCZ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GLRKDId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SFCZRKD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GLYRKDId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JH_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JHDH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FJ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f_DJLXZT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SDRKDH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Add1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Add2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Add3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Add4)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SJBMC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.XMID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RKDH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DJRQ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZJLB_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZJLB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DBDW_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DBDWMC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HT_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HTBH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplier_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lldw_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LldwName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BZ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LRR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LRRQ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SHR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SHRQ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SHBZ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SFZJZC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SFCZ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GLRKDId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SFCZRKD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GLYRKDId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JH_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JHDH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FJ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f_DJLXZT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDRKDH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Add1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Add2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Add3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Add4)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

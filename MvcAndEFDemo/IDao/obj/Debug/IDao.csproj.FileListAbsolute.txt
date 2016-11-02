@@ -1,0 +1,10 @@
+F:\资料文件\学习\MvcAndEFDemo\IDao\bin\Debug\IDao.dll
+F:\资料文件\学习\MvcAndEFDemo\IDao\bin\Debug\IDao.pdb
+F:\资料文件\学习\MvcAndEFDemo\IDao\bin\Debug\Model.dll
+F:\资料文件\学习\MvcAndEFDemo\IDao\bin\Debug\EntityFramework.dll
+F:\资料文件\学习\MvcAndEFDemo\IDao\bin\Debug\Model.pdb
+F:\资料文件\学习\MvcAndEFDemo\IDao\bin\Debug\EntityFramework.xml
+F:\资料文件\学习\MvcAndEFDemo\IDao\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\资料文件\学习\MvcAndEFDemo\IDao\obj\Debug\IDao.csprojResolveAssemblyReference.cache
+F:\资料文件\学习\MvcAndEFDemo\IDao\obj\Debug\IDao.dll
+F:\资料文件\学习\MvcAndEFDemo\IDao\obj\Debug\IDao.pdb

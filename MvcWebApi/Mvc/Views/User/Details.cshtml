@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Mvc.Models.User>
+
+@{
+    string scriptStr = "<script>alert('测试');</script>";
+    }
+  
+<fieldset>
+    <legend>User</legend>
+    @foreach (Mvc.Models.User item in Model)
+    {
+        <div class="display-label">
+        @Html.DisplayName(item.Name)
+    </div>
+          
+    }
+   
+    XKD@@QQ.COM
+  
+</fieldset> 
+<br />
+  @scriptStr
+<br />
+@Html.Raw(scriptStr)
+@{Html.RenderPartial("DetailsPP");}
+
+ 

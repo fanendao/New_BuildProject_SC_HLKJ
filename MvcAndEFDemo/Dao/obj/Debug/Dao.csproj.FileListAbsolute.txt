@@ -1,0 +1,14 @@
+F:\资料文件\学习\MvcAndEFDemo\Dao\bin\Debug\Dao.dll
+F:\资料文件\学习\MvcAndEFDemo\Dao\bin\Debug\Dao.pdb
+F:\资料文件\学习\MvcAndEFDemo\Dao\bin\Debug\EntityFramework.dll
+F:\资料文件\学习\MvcAndEFDemo\Dao\bin\Debug\IDao.dll
+F:\资料文件\学习\MvcAndEFDemo\Dao\bin\Debug\Model.dll
+F:\资料文件\学习\MvcAndEFDemo\Dao\bin\Debug\IDao.pdb
+F:\资料文件\学习\MvcAndEFDemo\Dao\bin\Debug\Model.pdb
+F:\资料文件\学习\MvcAndEFDemo\Dao\bin\Debug\EntityFramework.xml
+F:\资料文件\学习\MvcAndEFDemo\Dao\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\资料文件\学习\MvcAndEFDemo\Dao\obj\Debug\Dao.csprojResolveAssemblyReference.cache
+F:\资料文件\学习\MvcAndEFDemo\Dao\obj\Debug\Dao.dll
+F:\资料文件\学习\MvcAndEFDemo\Dao\obj\Debug\Dao.pdb
+F:\资料文件\学习\MvcAndEFDemo\Dao\bin\Debug\EntityFramework.SqlServer.dll
+F:\资料文件\学习\MvcAndEFDemo\Dao\bin\Debug\EntityFramework.SqlServer.xml

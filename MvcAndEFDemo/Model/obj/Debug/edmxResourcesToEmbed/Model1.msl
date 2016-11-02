@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="Model1" />
+  <Alias Key="Target" Value="Model1.Store" />
+  <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1StoreContainer">
+    <EntitySetMapping Name="T_RK_RKD">
+      <EntityTypeMapping TypeName="Model1.T_RK_RKD">
+        <MappingFragment StoreEntitySet="T_RK_RKD">
+          <ScalarProperty Name="Add4" ColumnName="Add4" />
+          <ScalarProperty Name="Add3" ColumnName="Add3" />
+          <ScalarProperty Name="Add2" ColumnName="Add2" />
+          <ScalarProperty Name="Add1" ColumnName="Add1" />
+          <ScalarProperty Name="SDRKDH" ColumnName="SDRKDH" />
+          <ScalarProperty Name="f_DJLXZT" ColumnName="f_DJLXZT" />
+          <ScalarProperty Name="FJ" ColumnName="FJ" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="JHDH" ColumnName="JHDH" />
+          <ScalarProperty Name="JH_ID" ColumnName="JH_ID" />
+          <ScalarProperty Name="GLYRKDId" ColumnName="GLYRKDId" />
+          <ScalarProperty Name="SFCZRKD" ColumnName="SFCZRKD" />
+          <ScalarProperty Name="GLRKDId" ColumnName="GLRKDId" />
+          <ScalarProperty Name="SFCZ" ColumnName="SFCZ" />
+          <ScalarProperty Name="SFZJZC" ColumnName="SFZJZC" />
+          <ScalarProperty Name="SHBZ" ColumnName="SHBZ" />
+          <ScalarProperty Name="SHRQ" ColumnName="SHRQ" />
+          <ScalarProperty Name="SHR" ColumnName="SHR" />
+          <ScalarProperty Name="LRRQ" ColumnName="LRRQ" />
+          <ScalarProperty Name="LRR" ColumnName="LRR" />
+          <ScalarProperty Name="BZ" ColumnName="BZ" />
+          <ScalarProperty Name="ZT" ColumnName="ZT" />
+          <ScalarProperty Name="LldwName" ColumnName="LldwName" />
+          <ScalarProperty Name="Lldw_ID" ColumnName="Lldw_ID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="HTBH" ColumnName="HTBH" />
+          <ScalarProperty Name="HT_ID" ColumnName="HT_ID" />
+          <ScalarProperty Name="DBDWMC" ColumnName="DBDWMC" />
+          <ScalarProperty Name="DBDW_ID" ColumnName="DBDW_ID" />
+          <ScalarProperty Name="ZJLB" ColumnName="ZJLB" />
+          <ScalarProperty Name="ZJLB_ID" ColumnName="ZJLB_ID" />
+          <ScalarProperty Name="DJRQ" ColumnName="DJRQ" />
+          <ScalarProperty Name="RKDH" ColumnName="RKDH" />
+          <ScalarProperty Name="XMID" ColumnName="XMID" />
+          <ScalarProperty Name="SJBMC" ColumnName="SJBMC" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_RK_RKDCB">
+      <EntityTypeMapping TypeName="Model1.T_RK_RKDCB">
+        <MappingFragment StoreEntitySet="T_RK_RKDCB">
+          <ScalarProperty Name="YDJHBH" ColumnName="YDJHBH" />
+          <ScalarProperty Name="SFYDJHCL" ColumnName="SFYDJHCL" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="JHDJ" ColumnName="JHDJ" />
+          <ScalarProperty Name="SFJHKZCL" ColumnName="SFJHKZCL" />
+          <ScalarProperty Name="SFHTKZCL" ColumnName="SFHTKZCL" />
+          <ScalarProperty Name="HTDJ" ColumnName="HTDJ" />
+          <ScalarProperty Name="HTSL" ColumnName="HTSL" />
+          <ScalarProperty Name="BZ" ColumnName="BZ" />
+          <ScalarProperty Name="SCPHBZ" ColumnName="SCPHBZ" />
+          <ScalarProperty Name="SCPH" ColumnName="SCPH" />
+          <ScalarProperty Name="YFJE" ColumnName="YFJE" />
+          <ScalarProperty Name="HJ" ColumnName="HJ" />
+          <ScalarProperty Name="DJ" ColumnName="DJ" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="DW" ColumnName="DW" />
+          <ScalarProperty Name="GGXH" ColumnName="GGXH" />
+          <ScalarProperty Name="CLMC" ColumnName="CLMC" />
+          <ScalarProperty Name="CLBH" ColumnName="CLBH" />
+          <ScalarProperty Name="CLID" ColumnName="CLID" />
+          <ScalarProperty Name="ZBID" ColumnName="ZBID" />
+          <ScalarProperty Name="SJBMC" ColumnName="SJBMC" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
