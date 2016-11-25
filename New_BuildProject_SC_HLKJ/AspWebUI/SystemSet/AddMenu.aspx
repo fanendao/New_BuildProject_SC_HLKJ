@@ -49,7 +49,7 @@
                                     <option value="440000" >广东省</option>
                                     <option value="450000" >广西壮族自治区</option>
                                     <option value="460000" >海南省</option>
-                                    <option value="500000" >重庆</option>
+                                    <option value="500000" >重庆</option>    
                                     <option value="510000" >四川省</option>
                                     <option value="520000" >贵州省</option>
                                     <option value="530000" >云南省</option>

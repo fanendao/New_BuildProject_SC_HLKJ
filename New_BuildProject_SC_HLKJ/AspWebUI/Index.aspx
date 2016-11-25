@@ -202,7 +202,7 @@
                             <li><a class="J_menuItem" href="search_results.html">搜索结果</a>
                             </li>
                             <li><a class="J_menuItem" href="forum_main.html">论坛</a>
-                            </li>
+                            </li>  
                             <li>
                                 <a href="#">即时通讯 <span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
