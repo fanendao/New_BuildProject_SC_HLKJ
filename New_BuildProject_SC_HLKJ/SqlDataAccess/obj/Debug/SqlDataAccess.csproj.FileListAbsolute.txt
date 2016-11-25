@@ -170,3 +170,4 @@ F:\资料文件\学习\New_BuildProject_SC_HLKJ\SqlDataAccess\obj\Debug\SqlDataA
 F:\资料文件\学习\New_BuildProject_SC_HLKJ\SqlDataAccess\bin\Debug\BusinessCommon.dll
 F:\资料文件\学习\New_BuildProject_SC_HLKJ\SqlDataAccess\bin\Debug\IT.Logistics.CommonComponent.dll
 F:\资料文件\学习\New_BuildProject_SC_HLKJ\SqlDataAccess\bin\Debug\System.Data.SQLite.dll
+F:\资料文件\学习\New_BuildProject_SC_HLKJ\SqlDataAccess\obj\Debug\SqlDataAccess.csprojResolveAssemblyReference.cache

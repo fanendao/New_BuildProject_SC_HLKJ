@@ -228,6 +228,7 @@
     <Content Include="css\plugins\treeview\bootstrap-treeview.css" />
     <Content Include="css\plugins\webuploader\webuploader.css" />
     <Content Include="css\style.css" />
+    <Content Include="Error\ie.html" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
@@ -294,7 +295,9 @@
     <Content Include="js\demo\sparkline-demo.js" />
     <Content Include="js\demo\treeview-demo.js" />
     <Content Include="js\demo\webuploader-demo.js" />
+    <Content Include="js\form-advanced-demo.min.js" />
     <Content Include="js\hplus.js" />
+    <Content Include="js\jquery-3.1.1.min.js" />
     <Content Include="js\jquery-ui-1.10.4.min.js" />
     <Content Include="js\jquery-ui.custom.min.js" />
     <Content Include="js\jquery.min.js" />
@@ -642,9 +645,9 @@
     <Content Include="js\plugins\webuploader\webuploader.nolog.min.js" />
     <Content Include="js\plugins\webuploader\webuploader.withoutimage.js" />
     <Content Include="js\plugins\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="js\vue.js" />
     <Content Include="js\welcome.js" />
     <Content Include="packages.config" />
-    <Content Include="css\.DS_Store" />
     <Content Include="css\plugins\blueimp\img\error.svg" />
     <Content Include="css\plugins\blueimp\img\play-pause.svg" />
     <Content Include="css\plugins\blueimp\img\video-play.svg" />
@@ -671,9 +674,6 @@
     <Content Include="js\demo\bootstrap_table_test2.json" />
     <Content Include="js\demo\photos.json" />
     <Content Include="js\demo\table_base.json" />
-    <None Include="js\jquery-1.8.2.intellisense.js" />
-    <Content Include="js\jquery-1.8.2.js" />
-    <Content Include="js\jquery-1.8.2.min.js" />
     <Content Include="js\jquery-ui-1.8.24.js" />
     <Content Include="js\jquery-ui-1.8.24.min.js" />
     <Content Include="js\modernizr-2.6.2.js" />
@@ -700,16 +700,9 @@
     <Content Include="js\WebForms\WebUIValidation.js" />
     <Content Include="plugins\fullavatareditor\asp.net\c#\bin\Newtonsoft.Json.dll" />
     <Content Include="plugins\fullavatareditor\asp.net\c#\Upload.aspx" />
-    <Content Include="plugins\fullavatareditor\asp.net\vb\bin\Newtonsoft.Json.dll" />
-    <Content Include="plugins\fullavatareditor\asp.net\vb\Upload.aspx" />
-    <Content Include="plugins\fullavatareditor\asp.net\vb\Upload.aspx.vb" />
-    <Content Include="plugins\fullavatareditor\asp\Upload.asp" />
-    <Content Include="plugins\fullavatareditor\asp\Upload.asp.cls" />
     <Content Include="plugins\fullavatareditor\crossdomain.xml" />
     <Content Include="plugins\fullavatareditor\expressInstall.swf" />
     <Content Include="plugins\fullavatareditor\fullAvatarEditor.swf" />
-    <Content Include="plugins\fullavatareditor\jsp\WEB-INF\lib\commons-fileupload-1.3.jar" />
-    <Content Include="plugins\fullavatareditor\jsp\WEB-INF\lib\fastjson-1.1.9.jar" />
     <Content Include="plugins\fullavatareditor\scripts\fullAvatarEditor.js" />
     <Content Include="plugins\fullavatareditor\scripts\jQuery.Cookie.js" />
     <Content Include="plugins\fullavatareditor\scripts\jQuery.dialog.js" />
@@ -718,6 +711,8 @@
     <Content Include="plugins\fullavatareditor\scripts\swfobject.js" />
     <Content Include="plugins\fullavatareditor\scripts\test.js" />
     <Content Include="plugins\fullavatareditor\simpleDemo.html" />
+    <Content Include="SystemSet\AddMenu.aspx" />
+    <Content Include="vue.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -738,8 +733,6 @@
     <Content Include="js\plugins\webuploader\.DS_Store" />
     <Content Include="js\plugins\webuploader\README.md" />
     <None Include="js\_references.js" />
-    <Content Include="plugins\fullavatareditor\jsp\upload.jsp" />
-    <Content Include="plugins\fullavatareditor\php\upload.php" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -766,6 +759,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemSet\AddMenu.aspx.cs">
+      <DependentUpon>AddMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemSet\AddMenu.aspx.designer.cs">
+      <DependentUpon>AddMenu.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

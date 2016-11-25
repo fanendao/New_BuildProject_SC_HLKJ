@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/vue.js"></script>
+   
+</head>
+<body>
+    <form >
+    <div  id="app">
+        {{message}}
+        {{ numm+1 }}
+        <p>Message is: {{ message }}</p>
+          <input v-model="message" placeholder="edit me">
+    </div>
+  
+        </form>
+</body>
+     <script type="text/javascript">
+
+         var app = new Vue({
+             el: '#app',
+             data: {
+                 message: 'Hello World',
+                 numm:111
+             }
+         });
+
+    </script>
+</html>
